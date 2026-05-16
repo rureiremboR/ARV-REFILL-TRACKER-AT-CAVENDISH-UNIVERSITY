@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARV Refill Tracker Cavendish University Uganda Health Center</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    
+   .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 20px auto;
+    }
+   .refill-card,.clinic-card {
+      background: #13313d;
+      border-radius: 12px;
+      padding: 20px;
+      width: 320px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+      border: 1px solid #009688;
+    }
+   .refill-card h3,.clinics-card h3 { color: #ffeb3b; margin-top: 10px; }
+   .badge {
+      background: #009688;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8em;
+      font-weight: bold;
+    }
+   .badge-urgent { background: #e53935; }
+   .badge-soon { background: #ffb300; color: #222; }
+   .filter-btn {
+      background: #004080;
+      color: white;
+      border: 1px solid #009688;
+      padding: 10px 18px;
+      margin: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+   .filter-btn:hover,.filter-btn.active { background: #009688; }
+   .dashboard-card {
+      background: #13313d;
+      border: 2px solid #37d422;
+      border-radius: 16px;
+      padding: 30px;
+      width: 100%;
+      max-width: 450px;
+      margin: 20px auto;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(55, 212, 34, 0.2);
+    }
+   .countdown-number {
+      font-size: 3em;
+      color: #37d422;
+      font-weight: bold;
+      line-height: 1;
+    }
+   .disclaimer {
+      font-size: 0.8em;
+      text-align: center;
+      color: #ccc;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 10px;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body><body>
+            CAVENDISH UNIVERSITY UGANDA- HEALTH CENTRE CUU-HC
+            
+  Our first Serving site for creating Refill Order, Recall Next Appointment Dtae and Tracking of Viral load dates while at Campus
+</body>
+  <header>
+    <img src="Cavendish University Uganda" alt="Cavendish University Uganda" width="60">
+    <h1>ARV Refill Tracker</h1>
+    <nav>
+      <a href="#home">Dashboard</a>
+      <a href="#schedule">schedule</a>
+      <a href="#clinics">clinics/a>
+      <a href="#support">Support</a>
+      <img src="clinics" alt="">
+      <a href="#appointment">Book Appointment</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2> Refill Dashboard</h2>
+      <p style="text-align:center;">Track your next Antiretroviral (ARV) drug pickup date.</p>
+      
+      <div class="dashboard-card">
+        <span class="badge" id="status-badge">Upcoming</span>
+        <h3>Next Refill Date</h3>
+        <p id="refill-date" style="font-size:1.2em; font-weight:bold;">Tuesday, May 30, 2026</p>
+        <div class="countdown-number" id="countdown">14</div>
+        <p>Days Remaining</p>
+        <hr style="border-color:#333; margin:15px 0;">
+        <p><strong>Pickup Point:</strong> CUU -Health Centre</p>
+        <p><strong>Patient ID:</strong> CUU-264056-001</p>
+        <button class="filter-btn" style="margin-top:15px;">Enable SMS Reminder</button>
+      
+              </p>
+    </section>
+
+    <section id="schedule">
+      <h2>Refill schedule</h2>
+      <div style="text-align: center; margin-bottom:20px;">
+        <button class="filter-btn active" onclick="filterRefills('all')">All</button>
+        <button class="filter-btn" onclick="filterRefills('this-week')">This Week</button>
+        <button class="filter-btn" onclick="filterRefills('next-month')">Next Month</button>
+        <button class="filter-btn" onclick="filterRefills('overdue')">Overdue</button>
+      </div>
+
+      <div class="card-grid">
+        <div class="refill-card" data-category="next-month">
+          <span class="badge">Next Month</span>
+          <h3>May 2026 Refill</h3>
+          <p><strong>Date:</strong> Tue, May 20, 2026</p>
+          <p><strong>Time:</strong> 9:00 AM - 4:00 PM</p>
+          <p><strong>Location:</strong> CUU -Health Centre</p>
+          <p><strong>Regimen:</strong> TLD - ABC/TDG</p>
+        </div>
+
+        <div class="refill-card" data-category="this-week">
+          <span class="badge badge-soon">This Week</span>
+          <h3>Viral Load Test Reminder</h3>
+          <p><strong>Date:</strong> Thu, May 8, 2026</p>
+          <p><strong>Time:</strong> 10:00 AM</p>
+          <p><strong>Location:</strong> Mulago ISS Clinic</p>
+          <p>Routine check recommended every 6 months.</p>
+        </div>
+
+        <div class="refill-card" data-category="overdue">
+          <span class="badge badge-urgent">Action Needed</span>
+          <h3>April 2026 Refill</h3>
+          <p><strong>Was Due:</strong> Mon, May 30, 2026</p>
+          <p><strong>Status:</strong> Please visit clinic ASAP</p>
+          <p>Contact CUU-HC Helpline if you need assistance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="clinics">
+      <h2>ART Clinics Near CUU-HC</h2>
+      <p style="text-align:center;">These facilities provide ARV refills and counseling services.</p>
+      <div class="card-grid">
+        <div class="clinic-card">
+          <h3>CUU Health Centre</h3>
+          <p><strong>Distance:</strong> On Campus</p>
+          <p><strong>Hours:</strong> Mon-Fri, 8:00 AM - 5:00 PM</p>
+          <p><strong>Services:</strong> ARV Refill, Adherence Counseling</p>
+          <button class="filter-btn">View on Map</button>
+          </a>
+        </div>
+
+        <div class="clinic-card">
+          <h3>Mulago ISS Clinic</h3>
+          <p><strong>Distance:</strong> 3.2 km from CUU</p>
+          <p><strong>Hours:</strong> Mon-Sat, 7:00 AM - 6:00 PM</p>
+          <p><strong>Services:</strong> ARV Refill, Viral Load, TB Screening</p>
+          <a href="https://maps.app.goo.gl/JemVKvYKopZQtADL6" target="_blank">
+            <button class="filter-btn">View on Map</button>
+          </a>
+        </div>
+
+        <div class="clinic-card">
+          <h3>Nsambya Hospital</h3>
+          <p><strong>Distance:</strong> 5.1 km from CUU</p>
+          <p><strong>Hours:</strong> Mon-Fri, 8:00 AM - 5:00 PM</p>
+          <p><strong>Services:</strong> ARV Refill, Youth Friendly</p>
+          <a href="tel:0800100066">
+            <button class="filter-btn">Call CUU Helpline</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <h2>Support & Resources</h2>
+      <form onsubmit="alert('Designed  for CUU-HC use only.Data use for ARV Patients.'); return false;">
+        <label>Patient ID</label>
+        <input type="text" placeholder="CUU-264056-001" value="CUU-264056-001" readonly>
+        
+        <label>Phone for SMS Reminder</label>
+        <input type="tel" placeholder=" +256 755 383586">
+        
+        <label>Preferred Clinic</label>
+        <select>
+          <option>Cavendish University Health Centre</option>
+          <option>Mulago ISS Clinic</option>
+          <option>Nsambya Hospital</option>
+        </select>
+        
+        <label>Message</label>
+        <textarea rows="3" placeholder="Optional message for clinic staff"></textarea>
+        
+        <input type="submit" value="Request Reminder Cavendish University Health Centre">
+        <p style="font-size:0.8em; text-align:center; margin-top:10px;">
+                </p>
+      </form>
+
+      <div style="text-align:center; margin-top:30px;">
+        <h3>Official Resources</h3>
+        <p>Cavendish University Health Centre Uganda Helpline: <a href="tel:+256 75X 3X358X" style="color:#37d422;">0800 100 066</a></p>
+        <p>Toll-Free & Confidential | 24/7</p>
+        <a href="https://www.health.go.ug/" target="_blank">
+          <button class="filter-btn">Visit CUU-HC Website</button>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>ARV Refill Tracker</h3>
+        <p>A site supporting Uganda's HIV care goals with in Cavendish University.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#schedule">Refill Schedule</a></li>
+          <li><a href="#clinics">Find a Clinic</a></li>
+          <li><a href="https://www.health.go.ug/" target="_blank">MoH Uganda</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026  rr264056.ac.ug</div> - Cavendish University Uganda</p>
+      <p class="disclaimer">
+        
+        Always consult qualified healthcare providers for medical decisions. 
+        <video src="videoframe_80692.png"></video>
+        Last Updated: May 30, 2026.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
