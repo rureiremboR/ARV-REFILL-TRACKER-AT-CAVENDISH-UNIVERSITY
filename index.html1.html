@@ -1,0 +1,95 @@
+
+<!-- saved from url=(0022)http://127.0.0.1:5500/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>      
+      /* Injected by five-server */
+      /*[data-highlight="true"] {
+        border: 1px rgb(90,170,255) solid !important;
+        background-color: rgba(155,215,255,0.5);
+        animation: fadeOutHighlight 1s forwards 0.5s;
+      }
+      img[data-highlight="true"] {
+        filter: sepia(100%) hue-rotate(180deg) saturate(200%);
+        animation: fadeOutHighlightIMG 0.5s forwards 0.5s;
+      }*/
+      @keyframes fadeOutHighlight {
+        from {background-color: rgba(155,215,255,0.5);}
+        to {background-color: rgba(155,215,255,0);}
+      }      
+      @keyframes fadeOutHighlightIMG {
+        0% {filter: sepia(100%) hue-rotate(180deg) saturate(200%);}
+        33% {filter: sepia(66%) hue-rotate(180deg) saturate(100%);}
+        50% {filter: sepia(50%) hue-rotate(90deg) saturate(50%);}
+        66% {filter: sepia(33%) hue-rotate(0deg) saturate(100%);}
+        100% {filter: sepia(0%) hue-rotate(0deg) saturate(100%);}
+      }
+      @keyframes fiveserverInfoPopup {
+        0%   {top:-40px;}
+        15%  {top:4px;}
+        85%  {top:4px;}
+        100% {top:-40px;}
+      }
+      /*smaller*/
+      @media (max-width: 640px) {
+        #fiveserver-info-wrapper {
+          max-width: 98%;
+        }
+        #fiveserver-info {
+          border-radius: 0px;
+        }      
+      }
+
+      </style></head><body><section id="appointment">
+  <h2>Book Next Appointment</h2>
+  <p style="text-align:center;">
+
+  </p><form id="appointment-form" onsubmit="handleAppointment(event)">
+    <label for="patient-id">Patient ID</label>
+    <input type="text" id="patient-id" value="CUU-264056" readonly="">
+
+    <label for="clinic">Select Clinic</label>
+    <select id="clinic" required="">
+      <option value="">-- Choose Clinic --</option>
+      <option>CUU Health Centre</option>
+      <option>Mulago ISS Clinic</option>
+      <option>Nsambya Hospital</option>
+    </select>
+
+    <label for="appt-date">Preferred Date</label>
+    <input type="date" id="appt-date" required="">
+
+    <label for="appt-time">Preferred Time</label>
+    <select id="appt-time" required="">
+      <option value="">-- Choose Time --</option>
+      <option>08:00 AM - 10:00 AM</option>
+      <option>10:00 AM - 12:00 PM</option>
+      <option>02:00 PM - 04:00 PM</option>
+    </select>
+
+    <label for="reason">Reason for Visit</label>
+    <select id="reason" required="">
+      <option value="">-- Select Reason --</option>
+      <option>ARV Refill</option>
+      <option>Viral Load Test</option>
+      <option>Adherence Counseling</option>
+      <option>Routine Checkup</option>
+    </select>
+
+    <label for="phone">Phone for Reminder SMS</label>
+    <input type="tel" id="phone" placeholder="+2567X53X357X" pattern="[0-9]{10,12}">
+
+    <input type="submit" value="Book Appointment">
+
+    <p class="disclaimer">
+    For real appointments, contact the clinic directly or call MoH Helpline 0800 100 066.
+    </p>
+  </form>
+
+  <div id="appt-confirmation" style="display:none;" class="dashboard-card">
+    <h3>Appointment Booked!</h3>
+    <p id="confirmation-text"></p>
+    <button class="filter-btn" onclick="resetForm()">Book Another</button>
+  </div>
+</section>
+<!-- Code injected by Five-server -->
+  <script async="" data-id="five-server" data-file="d:\INTERNET AND WEB DESIGN\Final Exams\index.html" type="application/javascript" src="./index.html1_files/fiveserver.js.download"></script>
+  </body></html>

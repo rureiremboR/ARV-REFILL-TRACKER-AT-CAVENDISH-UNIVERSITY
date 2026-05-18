@@ -1,0 +1,52 @@
+<section id="appointment">
+  <h2>Book Next Appointment</h2>
+  <p style="text-align:center;">
+
+  <form id="appointment-form" onsubmit="handleAppointment(event)">
+    <label for="patient-id">Patient ID</label>
+    <input type="text" id="patient-id" value="CUU-264056" readonly>
+
+    <label for="clinic">Select Clinic</label>
+    <select id="clinic" required>
+      <option value="">-- Choose Clinic --</option>
+      <option>CUU Health Centre</option>
+      <option>Mulago ISS Clinic</option>
+      <option>Nsambya Hospital</option>
+    </select>
+
+    <label for="appt-date">Preferred Date</label>
+    <input type="date" id="appt-date" required>
+
+    <label for="appt-time">Preferred Time</label>
+    <select id="appt-time" required>
+      <option value="">-- Choose Time --</option>
+      <option>08:00 AM - 10:00 AM</option>
+      <option>10:00 AM - 12:00 PM</option>
+      <option>02:00 PM - 04:00 PM</option>
+    </select>
+
+    <label for="reason">Reason for Visit</label>
+    <select id="reason" required>
+      <option value="">-- Select Reason --</option>
+      <option>ARV Refill</option>
+      <option>Viral Load Test</option>
+      <option>Adherence Counseling</option>
+      <option>Routine Checkup</option>
+    </select>
+
+    <label for="phone">Phone for Reminder SMS</label>
+    <input type="tel" id="phone" placeholder="+2567X53X357X" pattern="[0-9]{10,12}">
+
+    <input type="submit" value="Book Appointment">
+
+    <p class="disclaimer">
+    For real appointments, contact the clinic directly or call MoH Helpline 0800 100 066.
+    </p>
+  </form>
+
+  <div id="appt-confirmation" style="display:none;" class="dashboard-card">
+    <h3>Appointment Booked!</h3>
+    <p id="confirmation-text"></p>
+    <button class="filter-btn" onclick="resetForm()">Book Another</button>
+  </div>
+</section>

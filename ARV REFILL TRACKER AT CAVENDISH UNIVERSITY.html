@@ -6,7 +6,8 @@
   <title>ARV Refill Tracker Cavendish University Uganda Health Center</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .card-grid {
+    
+   .card-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -14,7 +15,7 @@
       max-width: 1100px;
       margin: 20px auto;
     }
-    .refill-card, .clinic-card {
+   .refill-card,.clinic-card {
       background: #13313d;
       border-radius: 12px;
       padding: 20px;
@@ -22,11 +23,8 @@
       box-shadow: 0 5px 12px rgba(0,0,0,0.3);
       border: 1px solid #009688;
     }
-    .refill-card h3, .clinic-card h3 { 
-      color: #ffeb3b; 
-      margin-top: 10px; 
-    }
-    .badge {
+   .refill-card h3,.clinics-card h3 { color: #ffeb3b; margin-top: 10px; }
+   .badge {
       background: #009688;
       color: white;
       padding: 4px 10px;
@@ -34,9 +32,9 @@
       font-size: 0.8em;
       font-weight: bold;
     }
-    .badge-urgent { background: #e53935; }
-    .badge-soon { background: #ffb300; color: #222; }
-    .filter-btn {
+   .badge-urgent { background: #e53935; }
+   .badge-soon { background: #ffb300; color: #222; }
+   .filter-btn {
       background: #004080;
       color: white;
       border: 1px solid #009688;
@@ -46,8 +44,8 @@
       cursor: pointer;
       font-size: 1em;
     }
-    .filter-btn:hover, .filter-btn.active { background: #009688; }
-    .dashboard-card {
+   .filter-btn:hover,.filter-btn.active { background: #009688; }
+   .dashboard-card {
       background: #13313d;
       border: 2px solid #37d422;
       border-radius: 16px;
@@ -58,13 +56,13 @@
       text-align: center;
       box-shadow: 0 8px 20px rgba(55, 212, 34, 0.2);
     }
-    .countdown-number {
+   .countdown-number {
       font-size: 3em;
       color: #37d422;
       font-weight: bold;
       line-height: 1;
     }
-    .disclaimer {
+   .disclaimer {
       font-size: 0.8em;
       text-align: center;
       color: #ccc;
@@ -73,55 +71,29 @@
       padding: 10px;
       border-top: 1px solid #333;
     }
-    #orderForm label {
-      display: block;
-      margin: 12px 0 5px;
-      color: #ffeb3b;
-      font-weight: bold;
-    }
-    #orderForm input, #orderForm select, #orderForm textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #009688;
-      background: #0e252e;
-      color: white;
-      font-size: 1em;
-      box-sizing: border-box;
-    }
-    #orderForm input:focus, #orderForm select:focus, #orderForm textarea:focus {
-      outline: none;
-      border-color: #37d422;
-    }
-    #formMsg {
-      text-align:center; 
-      color:#37d422; 
-      margin-top:10px;
-    }
   </style>
 </head>
-<body>
-
+<body><body>
+            CAVENDISH UNIVERSITY UGANDA- HEALTH CENTRE CUU-HC
+            
+  Our first Serving site for creating Refill Order, Recall Next Appointment Dtae and Tracking of Viral load dates while at Campus
+</body>
   <header>
-    <img src="cuu-logo.PNG" alt="Cavendish University Uganda Logo" width="60">
+    <img src="Cavendish University Uganda" alt="Cavendish University Uganda" width="60">
     <h1>ARV Refill Tracker</h1>
     <nav>
       <a href="#home">Dashboard</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#clinics">Clinics</a>
+      <a href="#schedule">schedule</a>
+      <a href="#clinics">clinics/a>
       <a href="#support">Support</a>
-      <a href="#order">Book Appointment</a>
+      <img src="clinics" alt="">
+      <a href="#appointment">Book Appointment</a>
     </nav>
   </header>
 
   <main>
-    <div style="text-align:center; padding:20px;">
-      <p><strong>CAVENDISH UNIVERSITY UGANDA - HEALTH CENTRE CUU-HC</strong></p>
-      <p>Our first serving site for creating Refill Order, Recall Next Appointment Date and Tracking of Viral load dates while at Campus</p>
-    </div>
-
     <section id="home">
-      <h2>Refill Dashboard</h2>
+      <h2> Refill Dashboard</h2>
       <p style="text-align:center;">Track your next Antiretroviral (ARV) drug pickup date.</p>
       
       <div class="dashboard-card">
@@ -131,14 +103,15 @@
         <div class="countdown-number" id="countdown">14</div>
         <p>Days Remaining</p>
         <hr style="border-color:#333; margin:15px 0;">
-        <p><strong>Pickup Point:</strong> CUU Health Centre</p>
+        <p><strong>Pickup Point:</strong> CUU -Health Centre</p>
         <p><strong>Patient ID:</strong> CUU-264056-001</p>
         <button class="filter-btn" style="margin-top:15px;">Enable SMS Reminder</button>
-      </div>
+      
+              </p>
     </section>
 
     <section id="schedule">
-      <h2>Refill Schedule</h2>
+      <h2>Refill schedule</h2>
       <div style="text-align: center; margin-bottom:20px;">
         <button class="filter-btn active" onclick="filterRefills('all')">All</button>
         <button class="filter-btn" onclick="filterRefills('this-week')">This Week</button>
@@ -152,7 +125,7 @@
           <h3>May 2026 Refill</h3>
           <p><strong>Date:</strong> Tue, May 20, 2026</p>
           <p><strong>Time:</strong> 9:00 AM - 4:00 PM</p>
-          <p><strong>Location:</strong> CUU Health Centre</p>
+          <p><strong>Location:</strong> CUU -Health Centre</p>
           <p><strong>Regimen:</strong> TLD - ABC/TDG</p>
         </div>
 
@@ -185,6 +158,7 @@
           <p><strong>Hours:</strong> Mon-Fri, 8:00 AM - 5:00 PM</p>
           <p><strong>Services:</strong> ARV Refill, Adherence Counseling</p>
           <button class="filter-btn">View on Map</button>
+          </a>
         </div>
 
         <div class="clinic-card">
@@ -209,57 +183,14 @@
       </div>
     </section>
 
-    <section id="order" style="padding: 40px 20px;">
-      <h2 style="text-align:center; color:#ffeb3b;">Request ARV Refill Order</h2>
-      <p style="text-align:center; color:#ccc;">Fill this form to request your next ARV refill.</p>
-
-      <form id="orderForm" class="dashboard-card">
-        <label>Patient ID</label>
-        <input type="text" name="patient_id" value="CUU-264056-001" readonly required>
-
-        <label>Full Name</label>
-        <input type="text" name="fullname" placeholder="Enter your full name" required>
-
-        <label>Phone Number</label>
-        <input type="tel" name="phone" placeholder="+256 7XX XXX" required>
-
-        <label>Current Regimen</label>
-        <select name="regimen" required>
-          <option value="">-- Select Regimen --</option>
-          <option value="TLD">TLD</option>
-          <option value="ABC_3TC_DTG">ABC/3TC/DTG</option>
-          <option value="AZT_3TC_NVP">AZT/3TC/NVP</option>
-        </select>
-
-        <label>Preferred Pickup Clinic</label>
-        <select name="clinic" required>
-          <option value="CUU Health Centre">CUU Health Centre</option>
-          <option value="Mulago ISS Clinic">Mulago ISS Clinic</option>
-          <option value="Nsambya Hospital">Nsambya Hospital</option>
-        </select>
-
-        <label>Preferred Pickup Date</label>
-        <input type="date" name="pickup_date" required>
-
-        <label>Additional Message</label>
-        <textarea name="message" rows="3" placeholder="Optional"></textarea>
-
-        <div style="text-align:center;">
-          <button type="submit" class="filter-btn">Submit Order Request</button>
-        </div>
-
-        <p id="formMsg"></p>
-      </form>
-    </section>
-
     <section id="support">
       <h2>Support & Resources</h2>
-      <form onsubmit="alert('Designed for CUU-HC use only. Data use for ARV Patients.'); return false;">
+      <form onsubmit="alert('Designed  for CUU-HC use only.Data use for ARV Patients.'); return false;">
         <label>Patient ID</label>
         <input type="text" placeholder="CUU-264056-001" value="CUU-264056-001" readonly>
         
         <label>Phone for SMS Reminder</label>
-        <input type="tel" placeholder="+256 755 383586">
+        <input type="tel" placeholder=" +256 755 383586">
         
         <label>Preferred Clinic</label>
         <select>
@@ -271,12 +202,14 @@
         <label>Message</label>
         <textarea rows="3" placeholder="Optional message for clinic staff"></textarea>
         
-        <input type="submit" value="Request Reminder" class="filter-btn">
+        <input type="submit" value="Request Reminder Cavendish University Health Centre">
+        <p style="font-size:0.8em; text-align:center; margin-top:10px;">
+                </p>
       </form>
 
       <div style="text-align:center; margin-top:30px;">
         <h3>Official Resources</h3>
-        <p>Cavendish University Health Centre Uganda Helpline: <a href="tel:0800100066" style="color:#37d422;">0800 100 066</a></p>
+        <p>Cavendish University Health Centre Uganda Helpline: <a href="tel:+256 75X 3X358X" style="color:#37d422;">0800 100 066</a></p>
         <p>Toll-Free & Confidential | 24/7</p>
         <a href="https://www.health.go.ug/" target="_blank">
           <button class="filter-btn">Visit CUU-HC Website</button>
@@ -289,7 +222,7 @@
     <div class="footer-container">
       <div class="footer-col">
         <h3>ARV Refill Tracker</h3>
-        <p>A site supporting Uganda's HIV care goals within Cavendish University.</p>
+        <p>A site supporting Uganda's HIV care goals with in Cavendish University.</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
@@ -301,40 +234,15 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 rr264056.ac.ug - Cavendish University Uganda</p>
+      <p>&copy; 2026  rr264056.ac.ug</div> - Cavendish University Uganda</p>
       <p class="disclaimer">
+        
         Always consult qualified healthcare providers for medical decisions. 
-        <br>Last Updated: May 30, 2026.
+        <video src="videoframe_80692.png"></video>
+        Last Updated: May 30, 2026.
       </p>
     </div>
   </footer>
-
-  <script>
-  document.getElementById('orderForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(this).entries());
-    document.getElementById('formMsg').textContent = 
-      `Order submitted for ${data.fullname}. We'll contact you on ${data.phone}.`;
-    this.reset();
-    this.patient_id.value = "CUU-264056-001";
-  });
-
-  function filterRefills(category) {
-    const cards = document.querySelectorAll('.refill-card');
-    cards.forEach(card => {
-      if (category === 'all' || card.dataset.category === category) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.classList.remove('active');
-    });
-    event.target.classList.add('active');
-  }
-  </script>
 
   <script src="js/main.js"></script>
 </body>
